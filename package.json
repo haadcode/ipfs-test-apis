@@ -1,0 +1,22 @@
+{
+  "name": "ipfs-test-apis",
+  "version": "0.0.1",
+  "description": "Various IPFS APIs for testing IPFS applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "./post_install.sh"
+  },
+  "keywords": [
+    "ipfs",
+    "test",
+    "mock",
+    "api"
+  ],
+  "author": "Haad",
+  "license": "MIT",
+  "dependencies": {
+    "ipfs": "^0.16.0",
+    "ipfs-daemon": "0.0.3"
+  }
+}
