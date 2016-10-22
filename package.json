@@ -16,7 +16,7 @@
   "author": "Haad",
   "license": "MIT",
   "dependencies": {
-    "ipfs": "^0.16.0",
-    "ipfs-daemon": "0.0.3"
+    "ipfs": "^0.17.0",
+    "ipfs-daemon": "0.1.0"
   }
 }
