@@ -16,7 +16,7 @@ const IpfsApis = [
   {
     // js-ipfs
     name: 'js-ipfs',
-    start: () => {
+    start: (options) => {
       return new Promise((resolve, reject) => {
         const ipfs = new IPFS()
         // ipfs.goOnline(() => resolve(ipfs))
@@ -29,8 +29,8 @@ const IpfsApis = [
   {
     // js-ipfs-api via local daemon
     name: 'js-ipfs-api',
-    start: () => {
-      return IPFSDaemon()
+    start: (options) => {
+      return IPFSDaemon(options)
         .then((res) => {
           ipfsDaemon = res.daemon
           return res.ipfs
