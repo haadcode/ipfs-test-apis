@@ -3,8 +3,9 @@
 const MemIpfs = require('./mem-ipfs')
 const IPFS = require('ipfs')
 const IPFSDaemon = require('ipfs-daemon')
+const IPFSGoDaemon = require('ipfs-daemon/src/ipfs-native-daemon')
 
-let ipfsDaemon
+let ipfs
 
 const IpfsApis = [
   {
@@ -18,25 +19,24 @@ const IpfsApis = [
     name: 'js-ipfs',
     start: (options) => {
       return new Promise((resolve, reject) => {
-        const ipfs = new IPFS()
-        // ipfs.goOnline(() => resolve(ipfs))
-        resolve(ipfs)
+         ipfs = new IPFSDaemon(options)
+         ipfs.on('ready', () => resolve(ipfs))
+         ipfs.on('error', (e) => reject(e))
       })
     },
-    stop: () => Promise.resolve()
-    // stop: () => new Promise((resolve, reject) => ipfs.goOffline(resolve))
+    stop: () => ipfs.stop()
   },
   {
     // js-ipfs-api via local daemon
     name: 'js-ipfs-api',
     start: (options) => {
-      return IPFSDaemon(options)
-        .then((res) => {
-          ipfsDaemon = res.daemon
-          return res.ipfs
-        })
+      return new Promise((resolve, reject) => {
+         ipfs = new IPFSGoDaemon(options)
+         ipfs.on('ready', () => resolve(ipfs))
+         ipfs.on('error', (e) => reject(e))
+      })
     },
-    stop: () => new Promise((resolve, reject) => ipfsDaemon.stopDaemon(resolve))
+    stop: () => ipfs.stop()
   }
 ]
 
