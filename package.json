@@ -1,6 +1,6 @@
 {
   "name": "ipfs-test-apis",
-  "version": "0.1.0-beta.2",
+  "version": "0.1.0-beta.3",
   "description": "Various IPFS APIs for testing IPFS applications",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,6 @@
   "license": "MIT",
   "dependencies": {
     "ipld-dag-pb": "^0.9.0",
-    "ipfs-daemon": "0.3.0-beta.1"
+    "ipfs-daemon": "^0.3.0-beta.2"
   }
 }
