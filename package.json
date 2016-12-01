@@ -1,11 +1,10 @@
 {
   "name": "ipfs-test-apis",
-  "version": "0.1.0-beta.3",
+  "version": "0.1.0-beta.4",
   "description": "Various IPFS APIs for testing IPFS applications",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "./post_install.sh"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "ipfs",
@@ -16,7 +15,6 @@
   "author": "Haad",
   "license": "MIT",
   "dependencies": {
-    "ipld-dag-pb": "^0.9.0",
-    "ipfs-daemon": "^0.3.0-beta.2"
+    "ipfs-daemon": "^0.3.0-beta.4"
   }
 }

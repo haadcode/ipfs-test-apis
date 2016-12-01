@@ -1,7 +1,6 @@
 'use strict'
 
 const MemIpfs = require('./mem-ipfs')
-const IPFS = require('ipfs')
 const IPFSDaemon = require('ipfs-daemon')
 const IPFSGoDaemon = require('ipfs-daemon/src/ipfs-native-daemon')
 
