@@ -18,9 +18,9 @@ const IpfsApis = [
     name: 'js-ipfs',
     start: (options) => {
       return new Promise((resolve, reject) => {
-         ipfs = new IPFSDaemon(options)
-         ipfs.on('ready', () => resolve(ipfs))
-         ipfs.on('error', (e) => reject(e))
+        ipfs = new IPFSDaemon(options)
+        ipfs.on('ready', () => resolve(ipfs))
+        ipfs.on('error', (e) => reject(e))
       })
     },
     stop: () => ipfs.stop()
@@ -30,9 +30,9 @@ const IpfsApis = [
     name: 'js-ipfs-api',
     start: (options) => {
       return new Promise((resolve, reject) => {
-         ipfs = new IPFSGoDaemon(options)
-         ipfs.on('ready', () => resolve(ipfs))
-         ipfs.on('error', (e) => reject(e))
+        ipfs = new IPFSGoDaemon(options)
+        ipfs.on('ready', () => resolve(ipfs))
+        ipfs.on('error', (e) => reject(e))
       })
     },
     stop: () => ipfs.stop()
