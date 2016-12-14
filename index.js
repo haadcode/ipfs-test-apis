@@ -1,18 +1,11 @@
 'use strict'
 
-const MemIpfs = require('./mem-ipfs')
-const IPFSDaemon = require('ipfs-daemon')
+const IPFSDaemon = require('ipfs-daemon/src/ipfs-node-daemon')
 const IPFSGoDaemon = require('ipfs-daemon/src/ipfs-native-daemon')
 
 let ipfs
 
 const IpfsApis = [
-  {
-    // mem-ipfs
-    name: 'mem-ipfs',
-    start: () => Promise.resolve(MemIpfs),
-    stop: () => Promise.resolve()
-  },
   {
     // js-ipfs
     name: 'js-ipfs',
